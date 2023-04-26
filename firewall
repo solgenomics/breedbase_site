@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Firewall that will prevent port 8080 and 5432 to be accessible from the outside world
+
+echo "1" > /proc/sys/net/ipv4/ip_forward
+
+iptables -I FORWARD -p tcp ! -i 0.0.0.0 --dport 8080 -j DROP # 8080 only accessible through localhost
+iptables -I FORWARD -p tcp ! -i 0.0.0.0 --dport 5432 -j DROP # postgres only accessible through localhost

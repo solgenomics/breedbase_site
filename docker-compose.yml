@@ -1,0 +1,41 @@
+version: "3.7"
+
+services:
+  breedbase:
+    image: breedbase/breedbase:v0.70
+    depends_on:
+      - breedbase_db
+    container_name: breedbase_web
+    ports:
+      - 8080:8080
+      - 25:25
+    volumes:
+      - webdata:/home/production/volume
+      - type: bind
+        source: /home/production/basesite/empty_db_without.test_users.sql
+        target: /home/production/empty_dump.sql
+#      - type: bind
+#        source: /home/production/sgn
+#        target: /home/production/cxgn/sgn
+      - type: bind
+        source: /home/production/basesite.breedbase.org/sgn_local.conf
+        target: /home/production/cxgn/sgn/sgn_local.conf
+      - type: bind
+        source: /home/production/db_dumps
+        target: /db_dumps
+      - type: bind
+        source: /home/production/basesite/crontab
+        target: /etc/crontab
+
+  breedbase_db:
+    image: breedbase/pg:latest
+    container_name: breedbase_db
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+
+volumes:
+  webdata:
+  dbdata:
+
+
+

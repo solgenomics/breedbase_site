@@ -5,7 +5,7 @@ You can easily create your own Breedbase site using this repo.
 
 ## First Installation
 
-As a prerequisite, you have to install [```docker```](https://docs.docker.com/engine/install/)), ```docker compose```, and ```git``` on your machine, the exact method depends on your operating system. 
+As a prerequisite, you have to install [```docker```](https://docs.docker.com/engine/install/), [```docker compose```](https://docs.docker.com/compose/install/), and [```git```](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) on your machine; follow the instructions appropriate for your operating system.
 
 After the installation of the prerequisites, clone this repo and start the docker from within the repo directory, then enter the docker and run the db update script:
 

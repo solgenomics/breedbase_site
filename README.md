@@ -38,6 +38,10 @@ To update the docker, run the following steps:
 ```
 docker pull breedbase/breedbase:latest
 
+docker compose down
+
+docker compose up -d
+
 docker exec -it breedbase_web bash
 
 db/run_all_patches.pl -h breedbase_db -u postgres -p postgres -d breedbase -e admin -s 150

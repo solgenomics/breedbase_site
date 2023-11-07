@@ -22,12 +22,12 @@ docker exec -it breedbase_web bash
 # run the db update script
 db/run_all_patches.pl -h breedbase_db -u postgres -p postgres -d breedbase -e admin -s 150
 ```
-A webpage should become accessible at localhost:8080.
+A webpage should become accessible through a browser at ```localhost:8080```.
 
 You can login using the following credentials:
 
-username: admin
-password: password
+username: ```admin```
+password: ```password```
 
 That's all there is to it!
 

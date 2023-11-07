@@ -36,6 +36,8 @@ That's all there is to it!
 To update the docker, run the following steps:
 
 ```
+cd breedbase_site
+
 docker pull breedbase/breedbase:latest
 
 docker compose down

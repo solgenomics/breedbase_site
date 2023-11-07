@@ -7,7 +7,7 @@ You can easily create your own Breedbase site using this repo.
 
 As a prerequisite, you have to install ```docker``` and ```git``` on your machine, the exact method depends on your operating system. 
 
-Clone this repo and start the docker from within the repo directory, then enter the docker and run the db update script:
+After the installation of the prerequisites, clone this repo and start the docker from within the repo directory, then enter the docker and run the db update script:
 
 ```
 git clone https://github.com/solgenomics/breedbase_site

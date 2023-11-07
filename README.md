@@ -1,7 +1,7 @@
 
 # Breedbase Site
 
-You can easily create your own Breedbase site using this repo. 
+You can easily create your own Breedbase site using this repo. For developers, the [```breedbase_dockerfile```](https://github.com/solgenomics/breedbase_dockerfile) repo is recommended.
 
 ## First Installation
 

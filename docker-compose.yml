@@ -4,10 +4,10 @@ services:
   breedbase:
     image: breedbase/breedbase:latest
     depends_on:
-      - breedbase_db
-    container_name: breedbase_web
+      - bb_db
+    container_name: bb_web
     ports:
-      - 8080:8080
+      - 8099:8080
     volumes:
       - webdata:/home/production/volume
       - type: bind
@@ -23,9 +23,9 @@ services:
         source: crontab
         target: /etc/crontab
 
-  breedbase_db:
+  bb_db:
     image: breedbase/pg:latest
-    container_name: breedbase_db
+    container_name: bb_db
     volumes:
       - dbdata:/var/lib/postgresql/data
 

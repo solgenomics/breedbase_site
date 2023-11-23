@@ -22,6 +22,9 @@ services:
       - type: bind
         source: crontab
         target: /etc/crontab
+      - type: bind
+        source: bash_history
+        target: /root/.bash_history
 
   bb_db:
     image: breedbase/pg:latest

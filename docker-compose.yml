@@ -2,6 +2,11 @@ version: "3.7"
 
 services:
   breedbase:
+    environment:
+      PGHOST: bb_db
+      PGDATABASE: breedbase
+      PGPASSWORD: postgres
+      PGUSER: postgres
     image: breedbase/breedbase:latest
     depends_on:
       - bb_db

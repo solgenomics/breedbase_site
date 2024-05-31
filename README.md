@@ -39,6 +39,9 @@ begin;
 update sgn_people.sp_person set password=crypt('your new password', gen_salt('bf')) where username = 'admin';
 commit;
 
+# quit database
+\q
+
 ```
 
 A webpage should become accessible through a browser at ```localhost:8080```.

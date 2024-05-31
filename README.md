@@ -17,11 +17,30 @@ cd breedbase_site
 docker compose up -d
 
 # enter into the docker
-docker exec -it breedbase_web bash
+docker exec -it bb_web bash
 
 # run the db update script
-db/run_all_patches.pl -h breedbase_db -u postgres -p postgres -d breedbase -e admin -s 150
+db/run_all_patches.pl -h bb_db -u postgres -p postgres -d breedbase -e admin -s 150
 ```
+Change the password 
+```
+# log into docker
+
+docker exec -it bb_web bash
+
+# log into database
+
+psql -h bb_db -U postgres breedbase
+
+# change password
+
+set search_path=sgn;
+begin;
+update sgn_people.sp_person set password=crypt('your new password', gen_salt('bf')) where username = 'admin';
+commit;
+
+```
+
 A webpage should become accessible through a browser at ```localhost:8080```.
 
 You can login using the following credentials:
@@ -44,9 +63,9 @@ docker compose down
 
 docker compose up -d
 
-docker exec -it breedbase_web bash
+docker exec -it bb_web bash
 
-db/run_all_patches.pl -h breedbase_db -u postgres -p postgres -d breedbase -e admin -s 150
+db/run_all_patches.pl -h bb_db -u postgres -p postgres -d breedbase -e admin -s 150
 ```
 
 

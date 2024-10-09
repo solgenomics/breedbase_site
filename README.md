@@ -4,12 +4,8 @@
 You can easily create your own Breedbase site using this repo. For developers, the [```breedbase_dockerfile```](https://github.com/solgenomics/breedbase_dockerfile) repo is recommended.
 
 A recent issue with the installation process has been fixed.
-If you would like to attempt a re-install, remove the old install, particularly the database docker:
-```
-docker compose down
-docker container stop bb_db
-docker volume remove breedbase_site_dbdata
-```
+If you would like to attempt a re-install, you may have to remove the old database docker. Please backup as needed before!
+
 
 ## First Installation
 

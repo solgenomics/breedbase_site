@@ -32,8 +32,12 @@ services:
         target: /root/.bash_history
 
   bb_db:
-    image: breedbase/pg:latest
+    image: postgres:12.7
+    shm_size: '2gb'
     container_name: bb_db
+    environment:
+      POSTGRES_PASSWORD: postgres
+
     volumes:
       - dbdata:/var/lib/postgresql/data
 

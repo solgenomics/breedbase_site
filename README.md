@@ -23,6 +23,17 @@ docker compose up -d
 # the db patches should now be run automatically, so no need to run them manually
 
 ```
+
+A webpage should become accessible through a browser at ```localhost:8099```.
+
+You can login using the following credentials:
+
+username: ```admin```
+password: ```password```  # update asap, see below!
+
+That's all there is to it!
+
+
 However, you should change the password as soon as possible:
 ```
 # log into docker
@@ -44,16 +55,6 @@ commit;
 \q
 
 ```
-
-A webpage should become accessible through a browser at ```localhost:8099```.
-
-You can login using the following credentials:
-
-username: ```admin```
-password: ```password```
-
-That's all there is to it!
-
 ## Updating an installation to the latest version
 
 To update the docker, run the following steps:

@@ -6,11 +6,11 @@ echo "Dumping breedbase db, $DATE";
 
 rm $HOME/.pgpass
 
-echo "breedbase_db:5432:breedbase:postgres:postgres"> $HOME/.pgpass
+echo "bb_db:5432:breedbase:postgres:postgres"> $HOME/.pgpass
 
 chmod 0600 $HOME/.pgpass
 
 ls -al $HOME/.pgpass
 
-pg_dump -h breedbase_db -U postgres -w -d breedbase > /db_dumps/breedbase_$DATE.sql
+pg_dump -h bb_db -U postgres -w -d breedbase > /db_dumps/breedbase_$DATE.sql
 

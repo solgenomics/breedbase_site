@@ -16,9 +16,6 @@ services:
     volumes:
       - webdata:/home/production/volume
       - type: bind
-        source: empty_db_without.test_users.sql
-        target: /home/production/empty_dump.sql
-      - type: bind
         source: sgn_local.conf
         target: /home/production/cxgn/sgn/sgn_local.conf
       - type: bind
@@ -29,7 +26,7 @@ services:
         target: /etc/crontab
       - type: bind
         source: bash_history
-        target: /root/.bash_history
+        target: /home/production/.bash_history
 
   bb_db:
     image: postgres:12.7
